@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>まるまさいん じぇねれーた</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <script src="utils.js"></script>
+</head>
+
+<body onload="load()">
+    <div class="title" id="ver">
+        <img src="title.png" alt="title">
+        <a href="?v=1.19" style="color: white;margin-right: 2px;">1.19モード</a>
+        <a href="?v=1.20" style="color: white;margin-right: 2px;">1.20モード</a>
+        <a href="?v=1.21" style="color: white;margin-right: 2px;">1.21モード</a>
+    </div>
+    <div class="main">
+        <div class="input">
+            <div class="box">
+                <label class="upload">
+                    <input type="file" id="upload" name="upload" accept=".png, .jpg, .jpeg, .gif"
+                        onchange="onFile(this)" aria-label="file" />
+                </label>
+                <label>
+                    <p class="form">画像アドレス</p><input type="text" id="address" autocomplete="url" aria-label="aaa">
+                    <a onclick="urlmsg()"><img src="question.png"></a>
+                </label>
+                <label>
+                    <p class="form">横幅</p><input type="number" id="width" value="1">
+                    <a onclick="whmsg()"><img src="question.png"></a>
+                </label>
+                <label>
+                    <p class="form">高さ</p><input type="number" id="height" value="1">
+                    <a onclick="whmsg()"><img src="question.png"></a>
+                </label>
+            </div>
+            <div class="box">
+                <label>
+                    <p class="form">X軸位置</p><input type="number" id="x" value="0">
+                    <a onclick="xyzmsg()"><img src="question.png"></a>
+                </label>
+                <label>
+                    <p class="form">Y軸位置</p><input type="number" id="y" value="0">
+                    <a onclick="xyzmsg()"><img src="question.png"></a>
+                </label>
+                <label>
+                    <p class="form">Z軸位置</p><input type="number" id="z" value="0">
+                    <a onclick="xyzmsg()"><img src="question.png"></a>
+                </label>
+            </div>
+            <div class="box">
+                <label>
+                    <p class="form">X軸回転</p><input type="number" id="rx" value="0">
+                    <a onclick="rxyzmsg()"><img src="question.png"></a>
+                </label>
+                <label>
+                    <p class="form">Y軸回転</p><input type="number" id="ry" value="0">
+                    <a onclick="rxyzmsg()"><img src="question.png"></a>
+                </label>
+                <label>
+                    <p class="form">Z軸回転</p><input type="number" id="rz" value="0">
+                    <a onclick="rxyzmsg()"><img src="question.png"></a>
+                </label>
+            </div>
+            <div class="box">
+                <label>
+                    <p class="form">自動コピー</p>
+                    <div class="toggle_button">
+                        <input id="autocopy" class="toggle_input" type='checkbox' checked="checked">
+                        <label for="autocopy" class="toggle_label"></label>
+                    </div>
+                </label>
+            </div>
+            <div class="run">
+                <input type="submit" value="ジェネレート！" onclick="gencmd()">
+            </div>
+            <textarea readonly id="generate" name="generate" aria-label="command"></textarea>
+        </div>
+    </div>
+</body>
+
+</html>
