@@ -8,10 +8,11 @@ async function gencmd() {
     // HTMLから 画像アドレス を取得
     let address = document.getElementById("address").value;
 
-    // もし URL の長さが 30 より大きい場合
-    if (address.length > 30) {
-        // 短縮URL を取得して address に代入する
-        address = await getShortURL(address);
+    if (document.getElementById("shortening").checked) {
+        if (address.length > 30) {
+            // 短縮URL を取得して address に代入する
+            address = await getShortURL(address);
+        }
     }
 
     //---------- HTMLから値を取得 ---------- start
