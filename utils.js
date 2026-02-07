@@ -100,9 +100,9 @@ async function getShortURL(url) {
 
 // ファイルをアップロードする関数
 async function uploadFile(file) {
-    const url = "https://hm-nrm.h3z.jp/uploader/work.php"; // アップロード先のURL
+    const url = "https://ul.h3z.jp/uploader-work/work.php"; // アップロード先のURL
     const formData = new FormData();
-    formData.append("files", file);
+    formData.append("files[]", file);
     const json = await post(url, formData);
     if (json == undefined) return "アップロードに失敗しました";
     else if (json.files[0].error != undefined) return json.files[0].error;
